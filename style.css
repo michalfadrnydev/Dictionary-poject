@@ -4,6 +4,7 @@
     --c-color-text: #a445ed;
     --c-form-backg: #f4f4f4;
     --c-backg: #ffffff;
+    --c-tools: #757575;
 
     --ff-s-s: 'Inter', sans-serif;
     --ff-s: 'Lora', serif;
@@ -33,13 +34,68 @@ html {
 }
 
 body {
-    margin: 2%;
+    margin: 0;
+    padding: 5% 5% 10% 5%;
 }
 
 /*-----------------------HEADER-----------------------*/
+
+
 header {
-    display: flex;
+    display: inline-block;
+    position: relative;
+    height: 45px;
+    width: 100%;
 }
+
+/*-----------------------font switcher*/
+.header-logo {
+    position: absolute;
+    left: 0;
+    width: 20%;
+}
+
+.header-tools {
+    display: flex;
+    position: absolute;
+    right: 0;
+    width: 70%;
+    /* tady nejde zarovnavat na stred vertikalne*/
+}
+
+/*-----------------------font switcher*/
+.font-switcher {
+    border-right: 2px solid var(--c-form-backg);
+    width: 55%;
+}
+
+/*-----------------------dark mode*/
+.dark-mode {
+    text-align: right;
+    width: 45%;
+    align-self: center;
+}
+
+#dark-mode-slider {
+    background-color: var(--c-tools);
+    border-radius: 1rem;
+    display: inline-block;
+    position: relative;
+    height: 20px;
+    width: 40px;
+}
+
+#dark-mode-slider-dot{
+    background-color: var(--c-backg);
+    border-radius: 1rem;
+    height: 14px;
+    left: 10%;
+    top: 50%;
+    transform: translate(0, -50%);
+    position: absolute;
+    width: 14px;
+}
+
 
 /*-------------------SEARCHED WORD--------------------*/
 /*------------------------NOUN------------------------*/
