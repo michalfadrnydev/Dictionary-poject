@@ -1,0 +1,46 @@
+:root {
+    --c-main-text: #2d2d2d;
+    --c-light-headers: #757575;
+    --c-color-text: #a445ed;
+    --c-form-backg: #f4f4f4;
+    --c-backg: #ffffff;
+
+    --ff-s-s: 'Inter', sans-serif;
+    --ff-s: 'Lora', serif;
+    --ff-m: 'Inconsolata', monospace;
+
+    --fs-h-l: 64px;
+    --lh-h-l: 77px;
+
+    --fs-h-m: 24px;
+    --lh-h-m: 29px;
+
+
+    --fs-h-s: 20px;
+    --lh-h-s: 24px;
+
+    --fs-b-m: 18px;
+    --lh-h-m: 24px;
+
+    --fs-b-s: 14px;
+    --lh-h-s: 17px;
+
+}
+
+html {
+    color: var(--c-main-text);
+    font-family: var(--ff-s-s)
+}
+
+body {
+    margin: 2%;
+}
+
+/*-----------------------HEADER-----------------------*/
+header {
+    display: flex;
+}
+
+/*-------------------SEARCHED WORD--------------------*/
+/*------------------------NOUN------------------------*/
+/*------------------------VERB------------------------*/
