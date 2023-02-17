@@ -42,37 +42,34 @@ body {
 
 
 header {
-    display: inline-block;
-    position: relative;
-    height: 45px;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 2em;
 }
 
 /*-----------------------font switcher*/
 .header-logo {
-    position: absolute;
-    left: 0;
-    width: 20%;
+    max-width: 300px;
 }
 
 .header-tools {
     display: flex;
-    position: absolute;
-    right: 0;
-    width: 70%;
+    align-items: center;
     /* tady nejde zarovnavat na stred vertikalne*/
+}
+
+.header-tools > div:not(:last-child) {
+    padding-right: 1.8rem;
 }
 
 /*-----------------------font switcher*/
 .font-switcher {
     border-right: 2px solid var(--c-form-backg);
-    width: 55%;
 }
 
 /*-----------------------dark mode*/
 .dark-mode {
-    text-align: right;
-    width: 45%;
     align-self: center;
 }
 
@@ -83,6 +80,7 @@ header {
     position: relative;
     height: 20px;
     width: 40px;
+    margin-right: .4rem;
 }
 
 #dark-mode-slider-dot{
