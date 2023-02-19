@@ -14,6 +14,7 @@
 
 <body>
     <!-----------------------HEADER----------------------->
+    <!--
     <header>
         <div class="header-logo">
             <img src="images/logo.svg" alt="Page logo">
@@ -32,18 +33,62 @@
                 <img src="images/icon-moon.svg" alt="Theme icon">
             </div>
         </div>
-        
+
     </header>
-    <!-------------------SEARCHED WORD-------------------->
-    <form>
-        
+    -->
+
+    <!-------------------SEARCHING-FORM------------------->
+    <form id="search" >
+        <input class="search-input" placeholder="Search for any word..." type="text">
+        <img src="images/icon-search.svg">
     </form>
-    <!------------------------NOUN------------------------>
-    <!------------------------VERB------------------------>
 
+    <!-------------------SEARCHED WORD-------------------->
+    <div class="overview">
+        <div class="overview-content">
+            <b class="overview-content-main">keyboard</b>
+            <b class="overview-content-pronunciation">/ˈkiːbɔːd/</b>
+        </div>
+        <img class="overview-button" src="images/icon-play.svg">
+    </div>
 
+    <!------------------------PAGE BREAK------------------->
+    <div class = "pagebreak-word" >
+        <i>noun</i>
+        <hr>
+    </div>
+    
+    <!------------------------NOUN------------------------->
+    <h2 class="explenation-header">Meaning</h2>
 
+    <ul class="explenation-list">
+        <li>(etc.) A set of keys used to operate a typewriter, computer etc.</li>
+        <li>A component of many instruments including the piano, organ, and harpsichord consisting of usually black and white keys that cause different tones to be produced when struck.</li>
+        <li>A device with keys of a musical keyboard, used to control electronic sound-producing devices which may be built into or separate from the keyboard device.</li>
+    </ul>
 
+    <h2 class="explenation-header">Synonyms</h2>
+    <h2 class="explenation-synonyms">electric keyboard</h2>
+
+    <!------------------------PAGE BREAK------------------->
+    <div class = "pagebreak-word" >
+        <i>verb</i>
+        <hr>
+    </div>
+
+    <!------------------------VERB------------------------->
+    <h2 class="explenation-header">Meaning</h2>
+    <ul class="explenation-list">
+        <li>To type on a computer keyboard.</li>
+    </ul>
+    <p class="explenation-quotation">“Keyboarding is the part of this job I hate the most.”</p>
+
+    <!------------------------SOURCE------------------------->
+    <hr class="source-break">
+    <p class="source-header">Source</p>
+    <a class="source-link" href="https://en.wiktionary.org/wiki/keyboard" target="_blank">https://en.wiktionary.org/wiki/keyboard</a>
+
+    <!------------------------SCRIPT------------------------->
     <script src="app.js"></script>
 </body>
 
