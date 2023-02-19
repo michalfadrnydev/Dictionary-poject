@@ -42,30 +42,33 @@ body {
 /*-----------------------HEADER-----------------------*/
 
 header {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
+    display: flex;
     height: 2em;
+    justify-content: space-between;
+    margin: 0 0 50px 0;
 }
 
 /*-----------------------font switcher*/
 .header-logo {
-    max-width: 300px;
+    height: 32px;
 }
 
 .header-tools {
     display: flex;
     align-items: center;
-    /* tady nejde zarovnavat na stred vertikalne*/
-}
-
-.header-tools > div:not(:last-child) {
-    padding-right: 1.8rem;
 }
 
 /*-----------------------font switcher*/
 .font-switcher {
     border-right: 2px solid var(--c-form-backg);
+    font-size: var(--fs-b-s);
+    text-align: right;
+    width: 150px;
+}
+
+.font-switcher img {
+    padding: 0 1rem;
 }
 
 /*-----------------------dark mode*/
@@ -81,7 +84,7 @@ header {
     position: relative;
     height: 20px;
     width: 40px;
-    margin-right: .4rem;
+    margin-right: 1rem;
 }
 
 #dark-mode-slider-dot{
@@ -99,27 +102,27 @@ header {
 /*-------------------SEARCH FORM--------------------*/
 
 #search {
-    background-color: var(--c-form-backg);
-    border-radius: 1rem;
     height: 48px;
-    margin: 20px 0;
+    margin: 0;
     position: relative;
 }
 
 #search input {
-    background: none;
+    background: var(--c-form-backg);
+    border-radius: 1rem;
     border: none;
     height: 100%;
-    margin-left: 20px;
-    width: 80%
+    text-indent: 25px;
+    width: 100%;
 }
 
 .search-input::placeholder {
     color: var(--c-main-text);
-    opacity: 0.25;
     font-family: var(--ff-s-s);
     font-size: var(--fs-b-m);
     font-weight: var(--fw-bold);
+    margin: 10px;
+    opacity: 0.25;
     vertical-align: middle;
 }
 
@@ -128,7 +131,7 @@ header {
     font-family: var(--ff-s-s);
     font-size: var(--fs-b-m);
     font-weight: var(--fw-bold);
-    outline: none;
+    outline: 1px solid var(--c-color-text); border-radius: 1rem;
 }
 
 .search-input:not(:focus) {
@@ -245,8 +248,6 @@ header {
     transform: translate(0, -50%);
   }
 
-
-
 .explenation-header:nth-of-type(2) {
     display: inline-block;
 }
@@ -283,16 +284,16 @@ header {
     font-size: var(--fs-b-s);
 }
 
-
-
-
-/*----------------------RESPONSIVE---------------------*/
-/*----------------------RESPONSIVE---------------------*/
 /*----------------------RESPONSIVE---------------------*/
 
 @media (min-width: 768px) {
     body {
         padding: 8% 5% 15% 5%;
+    }
+
+    .font-switcher {
+        font-size: var(--fs-b-m);
+        width: 190px;
     }
 
     /*-------------------SEARCHED WORD*/
