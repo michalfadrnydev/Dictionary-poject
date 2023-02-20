@@ -5,42 +5,37 @@
     --c-form-backg: #f4f4f4;
     --c-backg: #ffffff;
     --c-tools: #757575;
-
     --ff-s-s: 'Inter', sans-serif;
     --ff-s: 'Lora', serif;
     --ff-m: 'Inconsolata', monospace;
-
     --fs-h-l: 64px;
     --lh-h-l: 77px;
-
     --fs-h-m: 24px;
     --lh-h-m: 29px;
-
     --fs-h-s: 20px;
     --lh-h-s: 24px;
-
     --fs-b-m: 18px;
     --lh-h-m: 24px;
-
     --fs-b-s: 14px;
     --lh-h-s: 17px;
-
     --fw-regular: 400;
     --fw-bold: 700;
 }
-
 html {
     color: var(--c-main-text);
     font-family: var(--ff-s-s)
 }
-
 body {
     margin: 0;
     padding: 5% 8% 10% 8%;
+    transition: all 0.25s ease-in-out;
 }
-
+.body-dark {
+    background-color: #050505;
+    color: var(--c-backg);
+    --c-main-text: white;
+}
 /*-----------------------HEADER-----------------------*/
-
 header {
     align-items: center;
     display: flex;
@@ -48,46 +43,67 @@ header {
     justify-content: space-between;
     margin: 0 0 50px 0;
 }
-
 /*-----------------------font switcher*/
 .header-logo {
     height: 32px;
 }
-
 .header-tools {
     display: flex;
     align-items: center;
 }
-
 /*-----------------------font switcher*/
 .font-switcher {
     border-right: 2px solid var(--c-form-backg);
     font-size: var(--fs-b-s);
     text-align: right;
+    position: relative;
     width: 150px;
 }
-
 .font-switcher img {
     padding: 0 1rem;
 }
-
+.font-switcher-menu {
+    background: var(--c-backg);
+    border-radius: 0 0 1rem 1rem;
+    border-right: 1px solid var(--c-light-headers);
+    border-left: 1px solid var(--c-light-headers);
+    border-bottom: 1px solid var(--c-light-headers);
+    display: none;
+    list-style: none;
+    right: 0;
+    position: absolute;
+    padding: 15px 50px;
+    width: 300px;
+    z-index: 1;
+}
+.font-switcher-menu-active {
+    display: block;
+}
+.font-switcher-menu li {
+    color: var(--c-light-headers);
+    display: inline-block;
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-h-m);
+    margin: 0 15px;
+}
+.font-switcher-menu li:hover{
+    color: var(--c-main-text);
+}
 /*-----------------------dark mode*/
 .dark-mode {
     text-align: right;
     width: 45%;
 }
-
-#dark-mode-slider {
+.dark-mode-slider {
     background-color: var(--c-tools);
     border-radius: 1rem;
     display: inline-block;
+    margin-right: 1rem;
     position: relative;
     height: 20px;
     width: 40px;
-    margin-right: 1rem;
 }
-
-#dark-mode-slider-dot{
+.dark-mode-slider-dot {
     background-color: var(--c-backg);
     border-radius: 1rem;
     height: 14px;
@@ -96,16 +112,18 @@ header {
     transform: translate(0, -50%);
     position: absolute;
     width: 14px;
+    border: none;
+    transition: all 0.25s ease-in-out;
 }
-
+.dark-mode-slider-dot-left {
+    left: 55%;
+}
 /*-------------------SEARCH FORM--------------------*/
-
 #search {
     height: 48px;
     margin: 0;
     position: relative;
 }
-
 #search input {
     background: var(--c-form-backg);
     border-radius: 1rem;
@@ -114,9 +132,8 @@ header {
     text-indent: 25px;
     width: 100%;
 }
-
 .search-input::placeholder {
-    color: var(--c-main-text);
+    color: var(--c-light-headers);
     font-family: var(--ff-s-s);
     font-size: var(--fs-b-m);
     font-weight: var(--fw-bold);
@@ -124,23 +141,20 @@ header {
     opacity: 0.25;
     vertical-align: middle;
 }
-
 .search-input:focus {
-    color: var(--c-main-text);
+    color: var(--c-light-headers);
     font-family: var(--ff-s-s);
     font-size: var(--fs-b-m);
     font-weight: var(--fw-bold);
     outline: 1px solid var(--c-color-text); border-radius: 1rem;
 }
-
 .search-input:not(:focus) {
-    color: var(--c-main-text);
+    color: var(--c-light-headers);
     font-family: var(--ff-s-s);
     font-size: var(--fs-b-m);
     font-weight: var(--fw-bold);
     outline: none;
 }
-
 #search button {
     border: none;
     background-image: url("images/icon-search.svg");
@@ -152,18 +166,18 @@ header {
     transform: translate(0, -50%) scale(1.15);
     width: 16px;
 }
-
+#search button:hover {
+    opacity: 0.7;
+}
 /*------------------------SEARCHED WORD------------------------*/
 .overview {
     margin: 50px 0;
     position: relative;
     width: 100%;
 }
-
 .overview-content {
     width: 80%;
 }
-
 .overview-content-main {
     display: block;
     font-family: var(--ff-s-s);
@@ -171,7 +185,6 @@ header {
     font-weight: var(--fw-bold);
     margin: 0;
 }
-
 .overview-content-pronunciation {
     color: var(--c-color-text);
     display: block;
@@ -180,7 +193,6 @@ header {
     margin: 15px 0 0 0;
        
 }
-
 .overview-button {
     width: 48px;
     position: absolute;
@@ -188,25 +200,24 @@ header {
     top: 50%;
     transform: translate(0, -50%);
 }
-
+.overview-button:hover {
+    filter: drop-shadow(0 0 2px var(--c-color-text));
+    transition: all 0.2s ease-out;
+}
 /*------------------------PAGE BREAK------------------------*/
-
 .pagebreak-word {
     margin: 25px 0;
     position: relative;
     width: 100%;
 }
-
 .pagebreak-word > * {
     display: inline-block;
 }
-
 .pagebreak-word i {
     font-family: var(--ff-s-s);
     font-size: var(--fs-h-s);
     font-weight: var(--fw-bold);
 }
-
 .pagebreak-word hr {
     color: var(--c-form-backg);
     margin: 0;
@@ -216,7 +227,6 @@ header {
     top: 50%;
     width: 80%;
 }
-
 /*------------------------NOUN------------------------*/
 .explenation-header {
     color: var(--c-light-headers);
@@ -224,7 +234,6 @@ header {
     font-weight: 400;
     margin: 0;
 }
-
 .explenation-list {
     color: var(--c-main-text);
     font-size: calc(var(--fs-b-m)-3);
@@ -232,14 +241,12 @@ header {
     padding-left: 0;
     list-style-type: none;
 }
-
 .explenation-list li {
     color: var(--c-main-text);
     padding-left: 25px;
     position: relative;
-  }
-  
-  .explenation-list li:before {
+}
+.explenation-list li:before {
     content: "";
     display: block;
     width: 6px;
@@ -250,12 +257,10 @@ header {
     left: 0;
     top: calc(var(--lh-h-m)/2);
     transform: translate(0, -50%);
-  }
-
+}
 .explenation-header:nth-of-type(2) {
     display: inline-block;
 }
-
 .explenation-synonyms {
     color: var(--c-color-text);
     display: inline-block;
@@ -263,103 +268,116 @@ header {
     font-weight: 700;
     margin: 0 0 0 20px;
 }
-
 /*------------------------VERB------------------------*/
 .explenation-quotation {
     color: var(--c-light-headers);
     font-size: calc(var(--fs-b-m)-3);
     margin-left: 25px;
 }
-
 /*-----------------------SOURCE-----------------------*/
 .source-break{
     margin: 50px 0 40px 0;
     opacity: 0.25;
 }
-
 .source-header{
     color: var(--c-light-headers);
     margin: 0;
 }
-
 .source-link{
-    color: var(--c-light-headers);
+    color: var(--c-main-text);
     font-family: var(--ff-s-s);
     font-size: var(--fs-b-s);
 }
-
+.source-link:hover{
+    color: var(--c-color-text);
+}
+/*-----------------------ERROR-----------------------*/
+#error-container {
+    text-align: center;
+    padding: 60px 0;
+    width: 100%;
+}
+#error-container img {
+    vertical-align: middle; 
+    width: 30px;
+    opacity: 0.56;
+}
+.error-img-iverted {
+    filter: invert(100%);
+}
+#error-container span {
+    color: var(--c-light-headers);
+    font-size: calc(var(--fs-h-m)-1);
+    font-weight: var(--fw-bold);
+    margin-left: 10px;
+    vertical-align: middle;
+}
 /*----------------------RESPONSIVE---------------------*/
-
 @media (min-width: 768px) {
     body {
-        padding: 8% 5% 15% 5%;
+        padding: 5% 5% 15% 5%;
     }
-
     .font-switcher {
         font-size: var(--fs-b-m);
         width: 190px;
     }
-
     /*-------------------SEARCHED WORD*/
     #search {
         height: 64px;
     }
-    
     .search-input::placeholder {
         font-size: var(--fs-h-s);
     }
-    
     .search-input:focus {
         font-size: var(--fs-h-s);
     }
-    
     .search-input:not(:focus) {
         font-size: var(--fs-h-s);
     }
-
     #search button {
         height: 20px;
         transform: translate(0, -50%) scale(1.3);
         right: 25px;
         width: 20px;
     }
-
     /*-------------------MAIN WORD*/
     .overview-content-main {
         font-size: var(--fs-h-l);
     }
-
     .overview-content-pronunciation {
         font-size: var(--fs-h-m);     
     }
-
     .overview-button {
         width: 75px;
     }
-
     /*-------------------PAGE BREAK*/
-
     .pagebreak-word i {
         font-size: var(--fs-h-m);
     }
-
     .pagebreak-word hr {
         width: 90%;
     }
-
     /*-------------------MAIN WORD*/
     .explenation-header {
         font-size: var(--fs-h-s);
     }
-
     .explenation-list {
         font-size: var(--fs-b-m);
     }
-
     .explenation-quotation {
         font-size: var(--fs-b-m);
     }
+    #error-container {
+        padding: 150px 0;
+    }
+    #error-container img {
+        width: 50px;
+    }
+    #error-container span {
+        font-size: var(--fs-h-m);
+        margin-left: 20px;
+    }
 }
-
-@media (min-width: 992px) {
+.non-displaying {
+    display: none;
 }

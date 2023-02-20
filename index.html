@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,85 +11,77 @@
     <link rel="stylesheet" href="style.css" >
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 </head>
-
 <body>
-    <!-----------------------HEADER----------------------->
+    <!---------------------------HEADER--------------------------->
     <header>
         <div class="header-logo">
             <img src="images/logo.svg" alt="Page logo">
         </div>
-        
         <div class="header-tools">
             <div class="font-switcher">
                 <b>Sans Serif</b>
-                <img src="images/icon-arrow-down.svg" alt="Collapse icon">
+                <img src="images/icon-arrow-down.svg" alt="Collapse icon" id="arrow">
+                <ul class="font-switcher-menu">
+                    <li>Sans Sefir</li>
+                    <li>Sefir</li>
+                    <li>Mono</li>
+                </ul>
             </div>
-            
             <div class="dark-mode">
-                <div id="dark-mode-slider">
-                    <div id="dark-mode-slider-dot"></div>
+                <div class="dark-mode-slider">
+                    <button class="dark-mode-slider-dot"></button>
                 </div>
                 <img src="images/icon-moon.svg" alt="Theme icon">
             </div>
         </div>
-
     </header>
-
-    <!-------------------SEARCHING-FORM------------------->
+    <!-----------------------SEARCHING-FORM----------------------->
     <form id="search" >
         <input class="search-input" placeholder="Search for any word..." type="text" name="query">
         <button></button>
     </form>
-
-    <!-------------------SEARCHED WORD-------------------->
-    <div class="overview">
-        <div class="overview-content">
-            <b class="overview-content-main"></b> <!--keyboard-->
-            <b class="overview-content-pronunciation"></b> <!--/ˈkiːbɔːd/-->
+    <!--------------------------MAIN------------------------------>
+    <div id="main-container"class="non-displaying">
+        <!---------------------SEARCHED WORD---------------------->
+        <div class="overview">
+            <div class="overview-content">
+                <b class="overview-content-main"></b>
+                <b class="overview-content-pronunciation"></b>
+            </div>
+            <img class="overview-button" src="images/icon-play.svg">
         </div>
-        <img class="overview-button" src="images/icon-play.svg">
+        <!------------------------PAGE BREAK--------------------->
+        <div class = "pagebreak-word" >
+            <i>noun</i>
+            <hr>
+        </div>
+        <!------------------------NOUN--------------------------->
+        <h2 class="explenation-header">Meaning</h2>
+
+        <ul class="explenation-list" id="noun-list"></ul>
+
+        <h2 class="explenation-header">Synonyms</h2>
+        <h2 class="explenation-synonyms"></h2>
+        <!------------------------PAGE BREAK--------------------->
+        <div class = "pagebreak-word" >
+            <i>verb</i>
+            <hr>
+        </div>
+        <!------------------------VERB--------------------------->
+        <h2 class="explenation-header">Meaning</h2>
+        <ul class="explenation-list" id="verb-list"></ul>
+        <p class="explenation-quotation"></p>
+        <!------------------------SOURCE------------------------->
+        <hr class="source-break">
+        <p class="source-header">Source</p>
+        <a class="source-link" target="_blank"></a>
     </div>
-
-    <!------------------------PAGE BREAK------------------->
-    <div class = "pagebreak-word" >
-        <i>noun</i>
-        <hr>
+    <!-------------------------ERROR----------------------------->
+    <div id="error-container" class="non-displaying">
+        <img id="error-img" src="images/error.png">
+        <span>SORRY, WORD NOT FOUND</span>
     </div>
-    
-    <!------------------------NOUN------------------------->
-    <h2 class="explenation-header">Meaning</h2>
-
-    <ul class="explenation-list" id="noun-list">
-        <!--
-        <li>(etc.) A set of keys used to operate a typewriter, computer etc.</li>
-        <li>A component of many instruments including the piano, organ, and harpsichord consisting of usually black and white keys that cause different tones to be produced when struck.</li>
-        <li>A device with keys of a musical keyboard, used to control electronic sound-producing devices which may be built into or separate from the keyboard device.</li>
-        -->
-    </ul>
-
-    <h2 class="explenation-header">Synonyms</h2>
-    <h2 class="explenation-synonyms"></h2> <!--electric keyboard-->
-
-    <!------------------------PAGE BREAK------------------->
-    <div class = "pagebreak-word" >
-        <i>verb</i>
-        <hr>
-    </div>
-
-    <!------------------------VERB------------------------->
-    <h2 class="explenation-header">Meaning</h2>
-    <ul class="explenation-list" id="verb-list">
-        <!--<li>To type on a computer keyboard.</li>-->
-    </ul>
-    <p class="explenation-quotation"></p> <!--“Keyboarding is the part of this job I hate the most.”-->
-
-    <!------------------------SOURCE------------------------->
-    <hr class="source-break">
-    <p class="source-header">Source</p>
-    <a class="source-link" target="_blank"></a> <!--https://en.wiktionary.org/wiki/keyboard-->
-
-    <!------------------------SCRIPT------------------------->
+    <!------------------------SCRIPT----------------------------->
     <script src="app.js"></script>
 </body>
-
 </html>
