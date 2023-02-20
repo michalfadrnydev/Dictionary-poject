@@ -18,6 +18,7 @@
     --lh-h-m: 24px;
     --fs-b-s: 14px;
     --lh-h-s: 17px;
+
     --fw-regular: 400;
     --fw-bold: 700;
 }
@@ -54,6 +55,7 @@ header {
 /*-----------------------font switcher*/
 .font-switcher {
     border-right: 2px solid var(--c-form-backg);
+    opacity: 0;
     font-size: var(--fs-b-s);
     text-align: right;
     position: relative;

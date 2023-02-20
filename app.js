@@ -43,7 +43,6 @@ form.addEventListener("submit", async function (event) {
     try {
         const response = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchTerm}`);
         errorContainer.classList.add("non-displaying");
-        console.dir(response.data);
         /*Clearing out previously appended data*/
         for (let el of listOfElements) {
             el.innerHTML = "";
@@ -68,9 +67,9 @@ form.addEventListener("submit", async function (event) {
         nounSynonym.append(synonymData);
         for (let i = 0; i < 1 ; i++) {
             const newLi = document.createElement("li");
-            newLi.append(listOfExplanationVerb[i].definition);
+            newLi.append(listOfExplanationNoun[i].definition);
             verbMeaningList.append(newLi);
-        } 
+        }
         nounQuotation.append(`"${quotationData}"`);
         sourceLink.href = sourceData;
         sourceLink.append(sourceData);
